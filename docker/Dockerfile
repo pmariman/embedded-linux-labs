@@ -1,10 +1,6 @@
 # base container image
 FROM ubuntu:18.04
 
-# description labels
-LABEL maintainer="Philippe Mariman <pmariman@nalys-group.com>"
-LABEL buildenv="python-sphinx"
-
 # install packages for development
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update --fix-missing && apt-get upgrade -y && \
         apt-get install -y sudo locales wget make build-essential python3 python3-pip
