@@ -1,0 +1,10 @@
+Embedded Linux Labs
+===================
+
+Series of labs giving an overview of Linux systems in embedded projects and supporting customers developing
+such systems. Through theory and practical workshops, the architecture of an
+embedded Linux system, how to build such a system, how to take advantage of open
+source components to implement system features and reduce development costs,
+and details how to develop and debug your own applications in an embedded environment.
+At the end of this training, the participant will be ready to start a project using
+embedded Linux, from system building to application development.
