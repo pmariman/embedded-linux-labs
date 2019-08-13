@@ -16,8 +16,13 @@ embedded Linux, from system building to application development.
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :numbered:
+    :titlesonly:
+    :maxdepth: 2
+    :caption: Contents:
+
+    lab-kernel
+    lab-posix
 
 
 
