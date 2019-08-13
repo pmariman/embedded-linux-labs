@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# embedded-linux documentation build configuration file, created by
+# embedded-linux-labs documentation build configuration file, created by
 # sphinx-quickstart on Mon Aug 12 11:12:24 2019.
 #
 # This file is execfile()d with the current directory set to its
@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'embedded-linux'
+project = 'embedded-linux-labs'
 copyright = '2019, Philippe Mariman'
 author = 'Philippe Mariman'
 
@@ -115,7 +115,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'embedded-linuxdoc'
+htmlhelp_basename = 'embedded-linux-labs-doc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -142,7 +142,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'embedded-linux.tex', 'embedded-linux Documentation',
+    (master_doc, 'embedded-linux-labs.tex', 'embedded-linux-labs Documentation',
      'Philippe Mariman', 'manual'),
 ]
 
@@ -152,7 +152,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'embedded-linux', 'embedded-linux Documentation',
+    (master_doc, 'embedded-linux-labs', 'embedded-linux-labs Documentation',
      [author], 1)
 ]
 
@@ -163,8 +163,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'embedded-linux', 'embedded-linux Documentation',
-     author, 'embedded-linux', 'One line description of project.',
+    (master_doc, 'embedded-linux-labs', 'embedded-linux-labs Documentation',
+     author, 'embedded-linux-labs', 'One line description of project.',
      'Miscellaneous'),
 ]
 

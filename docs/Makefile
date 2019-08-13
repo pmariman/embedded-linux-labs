@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = embedded-linux
+SPHINXPROJ    = embedded-linux-labs
 SOURCEDIR     = source
 BUILDDIR      = build
 
