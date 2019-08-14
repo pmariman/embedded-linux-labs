@@ -13,7 +13,7 @@ Concepts
     - ``/var/log/httpd/``: Apache access and error logs directory
     - ...
 
-* Log files and directories are \textbf{rotated} to limit the space used by older logs (see ``logrotate``)
+* Log files and directories are **rotated** to limit the space used by older logs (see ``logrotate``)
 * Log messages can be filtered away by implementing a treshold on log (severity) level
 
 
