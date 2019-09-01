@@ -24,6 +24,7 @@ embedded Linux, from system building to application development.
     lab-emb-explore.rst
     lab-kernel
     lab-posix
+    hardware.rst
 
 
 
