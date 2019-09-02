@@ -1,10 +1,12 @@
 Configure and Build the Linux Kernel
 ====================================
 
+.. _Bootlin: https://bootlin.com/doc/training/embedded-linux/embedded-linux-slides.pdf
+
 
 References
 ----------
-* `BOOTLIN <https://bootlin.com/doc/training/embedded-linux/embedded-linux-slides.pdf>`_ part *Linux kernel introduction*
+* Bootlin_ slides *Linux kernel introduction*
 * Mainline kernel: https://www.kernel.org/
 
 
@@ -27,7 +29,6 @@ Concepts
         * ``make <some-defconfig>``
         * ``make``
         * ``make install``
-        * install and boot
 
 
 Steps
