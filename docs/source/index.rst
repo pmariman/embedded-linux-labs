@@ -21,6 +21,7 @@ embedded Linux, from system building to application development.
     :maxdepth: 2
     :caption: Contents:
 
+    lab-intro.rst
     lab-emb-explore.rst
     lab-kernel
     lab-posix
