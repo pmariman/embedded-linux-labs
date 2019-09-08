@@ -6,12 +6,14 @@ Configure and Build the Linux Kernel
 
 References
 ----------
+
 * Bootlin_ slides, chapter *Linux kernel introduction*
 * Mainline kernel: https://www.kernel.org/
 
 
 Goals
 -----
+
 * Understand the Linux kernel build and configuration process
 * Build a kernel for the native architecture of the host (using the native distribution C compiler)
 * Test the kernel on an emulated x86 system
@@ -19,20 +21,22 @@ Goals
 
 Concepts
 --------
+
 * The default architecture is **x86_64**.
 * All supported architectures have subdirectory in ``arch/`` subdirectory of the kernel source.
 * Main architectures for embedded Linux devices: ``arm``, ``mips``, ``x86``, ``powerpc``
 
 .. important::
-    The following steps are taken to configure, build and use a kernel:
+    The following steps are taken to configure, build and use a kernel::
 
-        * ``make <some-defconfig>``
-        * ``make``
-        * ``make install``
+        user@host: make <some-defconfig>
+        user@host: make
+        user@host: make install
 
 
 Steps
 -----
+
 #. Get the kernel source::
 
     user@host: cd ${DL_PATH}
@@ -64,7 +68,10 @@ Steps
 
 Hints
 -----
-* The following packages might need to be installed in order to build::
+
+* The following packages might need to be installed in order to build:
+
+::
 
     user@host: sudo apt install libssl-dev flex bison
 
@@ -73,5 +80,6 @@ Hints
 
 Questions
 ---------
+
 * What does the error generated at the end of the kernel initialization mean?
 * Under which path in the kernel configuration is the CPU architecture defined?
