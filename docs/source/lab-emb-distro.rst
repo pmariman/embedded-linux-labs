@@ -5,8 +5,8 @@ Distribution Based Root Filesystem
 References
 ----------
 
-* https://www.debian.org/intro/why_debian}
-* https://www.armbian.com}
+* https://www.debian.org/intro/why_debian
+* https://www.armbian.com
 
 
 Goals
@@ -19,7 +19,7 @@ Goals
 Concepts
 --------
 
-bla
+TBD
 
 
 Steps
@@ -29,12 +29,12 @@ Steps
 ::
 
    user@host: cd ${DL_PATH}
-   user@host: wget ${serverip}/downloads/rootfs-debian.img.gz
+   user@host: wget ${serverip}/downloads/rootfs-xxx-debian.img.gz
 
 2. Extract the image on your host:
 ::
 
-   user@host: gunzip rootfs-debian.img.gz
+   user@host: gunzip rootfs-xxx-debian.img.gz
 
 3. Byte copy the extracted image to an SD card (for example: ``/dev/mmcblk0`` or ``/dev/sda``):
 
@@ -43,7 +43,7 @@ Steps
 
 ::
 
-   user@host: dd if=rootfs-debian.img of=/dev/mmcblk0 bs=1M
+   user@host: dd if=rootfs-xxx-debian.img of=/dev/mmcblk0 bs=1M
 
 4. Insert the SD card in the target and boot the board:
 
