@@ -8,3 +8,4 @@ Introduction to Embedded Linux
     lab-emb-intro
     lab-emb-explore
     lab-emb-distro
+    lab-emb-simple
