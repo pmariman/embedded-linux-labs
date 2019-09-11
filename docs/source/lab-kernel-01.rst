@@ -6,7 +6,7 @@ Configure and Build the Linux Kernel
 
 References
 ----------
-* Bootlin_ slides *Linux kernel introduction*
+* Bootlin_ slides, chapter *Linux kernel introduction*
 * Mainline kernel: https://www.kernel.org/
 
 

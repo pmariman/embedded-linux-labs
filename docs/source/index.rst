@@ -24,7 +24,7 @@ embedded Linux, from system building to application development.
     lab-intro
     lab-kernel
     lab-posix
-    hardware.rst
+    appendix
 
 
 
