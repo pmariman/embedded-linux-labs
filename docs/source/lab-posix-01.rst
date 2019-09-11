@@ -4,6 +4,7 @@ Simple Log Module
 
 Concepts
 --------
+
 * Logs don't lie
 * Log files are written to ``/var/log/`` or ``/var/log/<application>``, for example:
 
@@ -19,6 +20,7 @@ Concepts
 
 Assignment
 ----------
+
 * By default, log to the connected terminal
 * Make functions to open, close, and print to a log file
 * Support the *syslog* logging levels
@@ -30,6 +32,7 @@ Assignment
 
 Module API
 ----------
+
 .. code-block:: c
 
     #ifndef LOG_HDR
@@ -61,6 +64,7 @@ Module API
 
 Example Output
 --------------
+
 .. code-block:: console
 
     [2017/10/18 14:40:35.666][INFO     ] HTTP GET /index.html 192.168.157.21
@@ -73,11 +77,13 @@ Example Output
 
 Questions
 ---------
+
 * Why is ``snprintf()`` superior to ``strcpy()`` and ``sprintf()``?
 
 
 Extension (Optional)
 --------------------
+
 * Colorize the outpur on the console regarding the log level (red = error for example)
 * The terminal will interpret ANSI control characters as text formatting settings
 * It is possible to check if a ``fd`` is a terminal: ``isatty()``
