@@ -1,0 +1,26 @@
+# base container image
+FROM ubuntu:18.04
+
+# install packages for development
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update --fix-missing && apt upgrade -y && \
+    apt install -y sudo build-essential libncurses5-dev file git \
+    bc rsync unzip python cpio wget vim procps silversearcher-ag \
+    ctags man strace netcat tmux gperf bison flex texinfo locales \
+    help2man gawk libarchive-zip-perl gdb tree cmake python3
+
+# generate locale
+RUN locale-gen en_US.UTF-8 && locale-gen --no-purge --lang en_US.UTF-8
+
+# create a dev user
+RUN useradd -m dev && adduser dev sudo && (echo 'dev:dev' | chpasswd)
+
+# set TERM variable to fix ncurses flickering
+ENV TERM=xterm-color
+
+# set start user and workdir
+USER dev
+WORKDIR /home/dev
+
+# default command at startup is bash shell
+CMD /bin/bash
