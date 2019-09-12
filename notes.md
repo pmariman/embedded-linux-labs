@@ -83,6 +83,9 @@
 
 
 ## TODO embedded linux
+
+* Lab on cross compiling busybox and creating a more complete cpio including modules and init etc
+* Lab on cross compiling toybox and creating a more complete cpio including modules and init and bash etc
 * U-Boot bootloader
   -  mkimage -T script -C none -n 'boot script file' -d ${file_in} ${file_out}
 * Storage media overview and mtd vs mmc
@@ -102,7 +105,7 @@
 
 
 # TODO lsp
-* http server
+* http server and request reply protocol
 * Small init system, including SIGCHLD to SIGIGN
 
 
@@ -129,3 +132,4 @@
   * factory sensor units + iot gateway
   * public transport ticketing system -> distributed truck management system
 * Final lab: Data Logger + reporting + Redis + PUB client
+  * data collection app, interface with db, maybe via separate process using uds
