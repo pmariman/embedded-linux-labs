@@ -6,6 +6,7 @@ Embedded Linux
     :caption: Labs:
 
     lab-kernel-01
+    lab-kernel-02
     lab-bb-01
     lab-br-01
     lab-br-02
