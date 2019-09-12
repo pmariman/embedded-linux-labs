@@ -1,3 +1,77 @@
+## Prerequisites for Labs
+
+* Basic to medior knowledge on the following topics is required:
+  - Linux Basics
+  - C programming
+  - TCP/IP Networking
+  - Embedded Programming & RTOS
+
+
+## Agenda Week 1
+
+* Day 1:
+    * Intro
+    * Embedded Linux in the field
+    * Overview of devices in embedded systems (flash, block, serial, network, sensors, ...)
+    * Embedded Linux components: bootloader, kernel, initramfs, root file system, BSP, ...
+    * Workshop: Setup development platform (SD card, serial line, ...)
+    * Workshop: Debian on embedded systems
+    * Workshop: compact custom root file system
+    * The Linux kernel (sources, configuration, versioning, development life cycle)
+    * Explanation on x86 and embedded (ARM, MIPS, PPC, ...) CPU architectures
+    * Workshop: Building Linux kernel and running in *qemu-system-x86_64*
+* Day 2:
+    * Linux boot process on x86 and init systems
+    * Organization of root file system
+    * Initial RAM file system (initramfs)
+    * Workshop: Building a minimal root file system from scratch and running in *qemu-system-x86_64*
+    * Cross compiling concepts (architectures, compiling & linking)
+    * C libraries (overview, differences, selection, ...)
+    * Workshop: Configuring and building a cross toolchain with *crosstool-ng*
+    * Workshop: Building Linux kernel and running in *qemu-system-arm*
+    * Workshop: Building a minimal root file system from scratch and running in *qemu-system-arm*
+    * Workshop: Building a minimal root file system from scratch and running on development platform
+* Day 3:
+    * Build systems introduction, Buildroot introduction
+    * Buildroot system configuration
+    * Workshop: a first simple root file system with Buildroot
+    * Linux generic boot process on ARM and the U-boot bootloader
+    * Boot media overview (NAND, NOR, eMMC, USB, network, ...)
+    * File systems overview (*ext4, squashfs, btrfs, nfs, f2fs, ...*)
+    * Workshop: Boot media creation from scratch using *kpartx, parted, mkfs, ...*
+    * Workshop: U-boot
+* Day 4:
+    * Linux kernel configuration for embedded systems
+    * Linux kernel modules
+    * Overview lightweight open source utilities
+    * Workshop: a more complex root file system with Buildroot
+    * Buildroot advanced tips & tricks
+
+
+## Content Week 1
+* Content selection from **Bootlin Slides**:
+    * Introduction to embedded Linux
+    * C libraries. Building a cross-compiling toolchain
+    * Bootloaders (focus on U-boot)
+    * Configuring, (cross) compiling and booting a Linux kernel
+    * Creating a simple, BusyBox based root filesystem from scratch
+    * Block filesystems
+    * Cross-compiling libraries and applications
+    * Embedded system building tools
+    * Lightweight tools for embedded systems.
+    * Developing and debugging applications for the embedded system (short)
+* Specific content for practical labs on development board:
+    * Debian on embedded systems
+    * The Linux kernel (emulation on *qemu*)
+    * Buildroot usage
+    * Build simple root file system for development platform
+    * U-boot bootloader
+    * Build custom kernel for development platform
+    * Cross compiling applications for development platform using Buildroot
+    * Extending simple root file system for development platform
+    * IoT use case project
+
+
 ## Lab Template
 * Goal
 * External literature / references
@@ -6,6 +80,7 @@
 * Questions
 * Cool tricks
 * Best Practices
+
 
 ## TODO embedded linux
 * U-Boot bootloader
@@ -25,9 +100,11 @@
       - Create a package in Buildroot and enable it in the custom config
       - Store the custom configuration file to ``configs/``
 
+
 # TODO lsp
 * http server
 * Small init system, including SIGCHLD to SIGIGN
+
 
 # TODO iot
 * Small chat server and client using zmq
