@@ -22,7 +22,6 @@ embedded Linux, from system building to application development.
     :caption: Contents:
 
     lab-intro
-    lab-kernel
     lab-el
     lab-posix
     appendix
