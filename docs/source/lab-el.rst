@@ -12,3 +12,4 @@ Embedded Linux
     lab-br-03
     lab-boot-media
     lab-debootstrap
+    lab-uboot-01
