@@ -6,3 +6,4 @@ Embedded Linux
     :caption: Labs:
 
     lab-br-01
+    lab-br-02
