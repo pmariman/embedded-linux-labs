@@ -132,4 +132,25 @@
   * factory sensor units + iot gateway
   * public transport ticketing system -> distributed truck management system
 * Final lab: Data Logger + reporting + Redis + PUB client
-  * data collection app, interface with db, maybe via separate process using uds
+  - data collection app, interface with db, maybe via separate process using uds
+  - Assignment
+    -  Main context: create a sensor data collection application
+    -  Data management and storage back-end (rw files)
+    -  Virtual sensor input over pipe/socket/...
+    -  Interface tcp/ip socket (http get/put)
+    - Listen on incoming sockets on specific port
+    - Arrangement socket management:
+      - Use one child process per accepted socket
+      - Use dynamic memory
+      - Use the ``epoll()`` system call
+    - Capture signal ``SIGTERM`` and ``SIGINT`` to gracefully shutdown the processes
+    - Command line parameters (use ``getopt``):
+```
+-h (show help)
+-d (daemonize the process)
+-l "path" (full path to the log file, default current working dir)
+-p "port" (tcp port number to use, default 5555)
+-u "max-nr" (max number of connected users, default 10)
+-s (server mode)
+-c (client mode)
+```
