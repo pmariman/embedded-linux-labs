@@ -1,5 +1,5 @@
-Introduction to Embedded Linux
-==============================
+Introduction
+============
 
 .. toctree::
     :titlesonly:
