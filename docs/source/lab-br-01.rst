@@ -26,7 +26,7 @@ Steps
    user@host: cd ${DL_PATH}
    user@host: wget https://buildroot.uclibc.org/downloads/buildroot-2019.02.1.tar.gz
 
-2. Extract the tarball and \texttt{cd} into the unpacked directory:
+2. Extract the tarball and ``cd`` into the unpacked directory:
 ::
 
    user@host: tar -xvf buildroot-2019.02.1.tar.gz

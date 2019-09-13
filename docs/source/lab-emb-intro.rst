@@ -96,7 +96,7 @@ Warnings
 
 Not Covered (yet)
 -----------------
-* Building cross-compilation toolchain with \textbf{crosstool-ng}
+* Building cross-compilation toolchain with **crosstool-ng**
 * NFS mounting the root filesystem
 * Patching the kernel sources
 * Raw flash filesystems

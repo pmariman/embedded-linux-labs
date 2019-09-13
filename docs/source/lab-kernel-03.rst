@@ -22,7 +22,7 @@ Goals
 Kernel make arguments for cross-compilation
 -------------------------------------------
 
-* Possible parameters passed to \texttt{make} for cross compilation:
+* Possible parameters passed to ``make`` for cross compilation:
 
 ======================= =========================== ===============================
 **Option**              **Description**             **Example**

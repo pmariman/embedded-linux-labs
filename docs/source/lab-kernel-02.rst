@@ -172,7 +172,7 @@ Kernel Logging
 Steps
 -----
 
-1.  Build a kernel for x86$\_$64 and test it in \textbf{qemu}:
+1.  Build a kernel for x86$\_$64 and test it in **qemu**:
 ::
 
     user@host: qemu-system-x86_64 -M pc -no-reboot \
@@ -199,7 +199,7 @@ Steps
     user@host: gcc —static -o /tmp/ramfs/sbin/myinit /tmp/init-hello-world.c
     user@host: strip /tmp/ramfs/sbin/myinit
 
-4. Create a root file system \textbf{cpio archive} which include the init program:
+4. Create a root file system **cpio archive** which include the init program:
 ::
 
     user@host: cd /tmp/ramfs
