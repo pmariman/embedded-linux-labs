@@ -65,6 +65,11 @@ Booting and Init
 * The init program is the only process the kernel starts and is referenced as **PID 1**.
 * The init program starts the rest of userspace and never exits.
 
+.. image:: images/linux-boot-01.svg
+    :align: center
+
+|
+
 
 Initramfs
 ---------
@@ -76,6 +81,11 @@ Initramfs
 * Packaged in **cpio** archive, optionally compressed.
 * The initramfs is extracted into a **tmpfs** filesystem in RAM.
 * https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt
+
+.. image:: images/linux-boot-02.svg
+    :align: center
+
+|
 
 
 Virtual filesystems proc and sysfs
@@ -166,7 +176,7 @@ Steps
 ::
 
     user@host: qemu-system-x86_64 -M pc -no-reboot \
-                -kernel $\dollar${LINUX_PATH}/linux-5.0.6/arch/x86/boot/bzImage \
+                -kernel ${LINUX_PATH}/linux-5.0.6/arch/x86/boot/bzImage \
                 -append "panic=1 console=tty1"
 
 2. Create a simple custom init program (*init-hello-world.c*) to test ``rdinit=`` within qemu:
@@ -199,7 +209,7 @@ Steps
 ::
 
     user@host: qemu-system-x86_64 -M pc -no-reboot \
-                   -kernel $\dollar${LINUX_PATH}/linux-5.0.6/arch/x86/boot/bzImage \
+                   -kernel ${LINUX_PATH}/linux-5.0.6/arch/x86/boot/bzImage \
                    -append "panic=1 console=tty1 rdinit=/sbin/myinit" \
                    -initrd /tmp/root.cpio.gz
 
