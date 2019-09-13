@@ -24,6 +24,7 @@ embedded Linux, from system building to application development.
     lab-intro
     lab-el
     lab-posix
+    lab-iot
     appendix
 
 
