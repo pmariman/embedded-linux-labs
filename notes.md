@@ -110,7 +110,7 @@
 
 
 # TODO iot
-* Small chat server and client using zmq
+* Small chat server and client using zmq, provide server in Python
 * Program design (event loop, MP, ...)
 * Small user space sensor driver over (I2C or SPI)
   * https://www.kernel.org/doc/Documentation/i2c/dev-interface
