@@ -74,50 +74,68 @@ Assignments
 
 * Create a *cpio* archive containing the Busybox install tree
 * Run the *cpio* archive as initramfs
+* Show a directory listing of the root file system in run time
 
 
 Questions
 ---------
 
 * Create a file */root/hello* containing "hello world", reboot, what happens to the file? Why?
-* What init script starts the network interfaces?
-* What starts the tty on the serial console?
-* Which other init systems exist? Which ones are suitable for embedded systems and why?
+* What directories are missing in the root file system?
 
 
 Busybox init System
 -------------------
 
-* ``/sbin/init`` The default Buildroot image uses the **Busybox** init. It does not offer a lot of features
-  (like runlevels), but it is a very simple implementation.
-* ``/etc/inittab`` Jobs description file for the **init** system.
+* Busybox provides a simple ``init`` system equivalent to ``System V init``
+* It does not offer a lot of features, like runlevels, but it is a very simple implementation
+
+* ``/sbin/init`` The init binary (or soft link)
+* ``/etc/inittab`` Jobs description file for the **init** system
 
 ::
 
-   user@host: cat bb_install/etc/inittab
+   user@host: cat bb_example/etc/inittab
    # /etc/inittab
    ::sysinit:/etc/init.d/rcS
-   ttyS0::respawn:/sbin/getty -L  ttyS0 0 vt100
-   ::ctrlaltdel:/sbin/reboot
-   ::shutdown:/bin/umount -a -r
-   ::restart:/sbin/init
+   ttyS0::respawn:/sbin/getty -L ttyS0 0 vt100
 
-* ``/etc/init.d/`` All system init scripts are located here.
+
+* ``/etc/init.d/rcS`` Init script to kickstart all other startup scripts in this directory.
 
 ::
 
-   user@host: ls bb_install/etc/init.d/
-   S01syslogd  S02klogd  S20urandom  S40network  rcK  rcS
+   user@host: cat bb_example/etc/init.d/rcS
+   #!/bin/sh
+
+   mount -a
+
 
 * ``etc/fstab`` Description of administered system mount points; all mounted during init.
 
 ::
 
-   user@host: cat bb_install/etc/fstab
+   user@host: cat bb_example/etc/fstab
    # /etc/fstab
-   #device         mount-point  type   options   dump  fsck order
-   /dev/mmcblk0p1  /boot        ext4   rw,noauto 0     1
-   proc            /proc        proc   defaults  0     0
-   sysfs           /sys         sysfs  defaults  0     0
-   tmpfs           /tmp         tmpfs  defaults  0     0
-   tmpfs           /run         tmpfs  defaults  0     0
+   #device         mount-point  type      options           dump  fsck order
+   /dev/mmcblk0p1  /boot        ext4      rw,noauto         0     1
+   proc            /proc        proc      defaults          0     0
+   sysfs           /sys         sysfs     defaults          0     0
+   devtmpfs        /dev         devtmpfs  mode=0755,nosuid  0     0
+   tmpfs           /tmp         tmpfs     defaults          0     0
+   tmpfs           /run         tmpfs     defaults          0     0
+
+
+Assignments
+-----------
+
+* Enable the following applets in the Busybox menu: ``init``, ``mount``, ``getty``, ``login``, ``adduser``, ``passwd``
+* Create the necessary files to start a shell at the console
+* Create or adapt a simple init script that runs a ``hello-world`` binary
+
+
+Questions
+---------
+
+* What starts the tty on the serial console?
+* Which other init systems exist? Which ones are suitable for embedded systems and why?
