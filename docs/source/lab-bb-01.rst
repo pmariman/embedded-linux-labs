@@ -129,7 +129,7 @@ Busybox init System
 Assignments
 -----------
 
-* Enable the following applets in the Busybox menu: ``init``, ``mount``, ``getty``, ``login``, ``adduser``, ``passwd``
+* Enable the standard configuration for Busybox (``make defconfig``)
 * Create the necessary files to start a shell at the console
 * Create or adapt a simple init script that runs a ``hello-world`` binary
 
@@ -139,3 +139,19 @@ Questions
 
 * What starts the tty on the serial console?
 * Which other init systems exist? Which ones are suitable for embedded systems and why?
+
+
+Adding User Files
+-----------------
+
+::
+
+   user@host: cat bb_example/etc/passwd
+   root:x:0:0::/root:/bin/sh
+
+
+::
+
+   user@host: cat bb_example/etc/shadow
+   root::0::::::
+

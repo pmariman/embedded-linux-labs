@@ -125,11 +125,12 @@ Staging Installation Steps (Preparing the root file system)
 Assignments
 -----------
 
-* Clean the *Busybox* build
-* Enable the ``modprobe`` command and cross compile *Busybox*
-* Install *Busybox* to the the staging directory
-* Create a compressed *cpio* archive and boot in *qemu*
-* Load a kernel module using ``modprobe``
+* Clean the Busybox build
+* Enable the following applets in the Busybox menu: ``modprobe``, ``lsmod``
+* Cross compile Busybox
+* Install Busybox to the the staging directory
+* Create a compressed *cpio* archive and boot in ``qemu``
+* Load a kernel module using ``modprobe`` and check with ``lsmod``
 
 
 Optional Assignments
