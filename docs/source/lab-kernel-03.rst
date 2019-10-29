@@ -86,7 +86,7 @@ Steps
 Assignments
 -----------
 
-* Cross compile *init-hello-world* and test ``init=`` in qemu
+* Cross compile *init-hello-world* with **arm-linux-gnueabihf-gcc** and test ``init=`` in qemu
 
 
 Questions
@@ -95,8 +95,8 @@ Questions
 * Show the differences between the default and your kernel configuration.
 
 
-Optional: Staging Installation Steps
-------------------------------------
+Staging Installation Steps (Preparing the root file system)
+-----------------------------------------------------------
 
 1. Cross-compile the kernel modules:
 ::
@@ -121,12 +121,19 @@ Optional: Staging Installation Steps
     user@host: ARCH=arm INSTALL_MOD_PATH=${STAGING_PATH} make modules_install
 
 
+Assignments
+-----------
+
+* Clean the *Busybox* build
+* Enable the ``modprobe`` command and cross compile *Busybox*
+* Install *Busybox* to the the staging directory
+* Create a compressed *cpio* archive and boot in *qemu*
+* Load a kernel module using ``modprobe``
+
+
 Optional Assignments
 --------------------
 
-* Cross compile *busybox* and install to the the staging directory
-* Create a compressed *cpio* archive and boot in *qemu*
-* Configure the kernel to run without dynamic loadable modules, but keep the same functionality
 * Cross compile *toybox*, create a new compressed *cpio* archive and boot in *qemu*.
   Compare the differences between *toybox* and *busybox*.
 * Configure the kernel in a way to make the resulting binary as small as possible (non used funtionality can be
