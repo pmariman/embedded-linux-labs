@@ -93,6 +93,7 @@ Questions
 ---------
 
 * Show the differences between the default and your kernel configuration.
+* What is the *dtb* file being passed to the qemu?
 
 
 Staging Installation Steps (Preparing the root file system)
