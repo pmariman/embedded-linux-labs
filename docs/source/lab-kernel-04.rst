@@ -17,8 +17,8 @@ Goals
 -----
 
 * Make a simple *out-of-tree kernel module*
-* Build the kernel module for a target (e.g. ```qemu```)
-* Test the module and module commands on a target
+* Build the kernel module for a target (e.g. ``qemu-system-arm``)
+* Test the module and module commands on a target (e.g. ``qemu-system-arm``)
 
 
 Steps
@@ -45,13 +45,13 @@ Steps
         module_init(hello_init);
         module_exit(hello_exit);
 
-        MODULE_LICENSE(“GPL”);
-        MODULE_AUTHOR(“foo”);
-        MODULE_DESCRIPTION(“a simple hello kernel module”);
-        MODULE_VERSION(“0.01”);
+        MODULE_LICENSE("GPL");
+        MODULE_AUTHOR("foo");
+        MODULE_DESCRIPTION("a simple hello kernel module");
+        MODULE_VERSION("0.01");
 
 
-2. Create a ```Makefile``` file containing the following code:
+2. Create a ``Makefile`` file containing the following code:
 ::
 
         obj-m += hello.o
@@ -66,6 +66,10 @@ Steps
                 make -C $(KBUILD) M=$(PWD) clean
 
 
+.. important::
+   Makefile commands do not include architecture and cross compiler info
+
+
 3. Build the module:
 ::
 
@@ -76,8 +80,8 @@ Steps
 Assignments
 -----------
 
-* Create a root file system containing the module
-* Test the module on a target
+* Create a root file system containing the module (use ``${STAGING_PATH}``)
+* Test the module on a target, e.g. ``qemu-system-arm``
 * List all shell commands that manipulate kernel modules
 * Make the module load automatically at boot
 
