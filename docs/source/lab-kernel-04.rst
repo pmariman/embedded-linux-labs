@@ -24,7 +24,7 @@ Goals
 Steps
 -----
 
-1. Create a ```hello-module.c``` file containing the following code inside a new directory ``hello-module/``:
+1. Create a ```hello.c``` file containing the following code inside a new directory ``hello-module/``:
 ::
 
         #include <linux/init.h>
