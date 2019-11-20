@@ -62,22 +62,10 @@ Simple Demo
 Web Server Demo
 ---------------
 
-1. Use **nginx** as webserver:
+1. nginx sample config as http directory listing:
 ::
 
-    user@host: docker run -ti --name test3 ubuntu:latest /bin/sh
-    root@<docker-id>: apt install nginx
-
-2. Question: how to access webserver? *[TODO]*
-::
-
-   user@host: 
-
-3. Dockerfile: ubuntu + nginx *[TODO]*
-
-4. nginx sample config as http directory listing:
-::
-
+   daemon off;
    user nginx;
    worker_processes 1;
 
@@ -103,10 +91,45 @@ Web Server Demo
        }
    }
 
-5. Start web server service:
+
+
+2. Dockerfile: ubuntu + nginx + default config file
 ::
 
-   user@host: docker run --rm -ti -v /home/user/nginx.conf:/etc/nginx/nginx.conf -v /home/user/data:/usr/share/nginx/data -p 80:80 nginx
+   # base container image
+   FROM ubuntu:18.04
+
+   # install packages
+   RUN export DEBIAN_FRONTEND=noninteractive && \
+       apt update --fix-missing && apt upgrade -y && \
+       apt install -y sudo locales nginx
+
+   # generate locale
+   RUN locale-gen en_US.UTF-8 && locale-gen --no-purge --lang en_US.UTF-8
+
+   # create a nginx user
+   RUN useradd -M --home /nonexistent --shell /usr/sbin/nologin nginx
+
+   # set default configuration
+   COPY nginx.conf /etc/nginx/nginx.conf
+
+   # default command at startup is nginx daemon
+   ENTRYPOINT [ "nginx" ]
+
+
+3. Build container image from Dockerfile:
+::
+
+   user@host: docker build -t nginx-http-share .
+
+
+4. Start web server service:
+::
+
+   user@host: docker run --rm -ti -p 80:80 \
+              -v </full/path/to/share/>:/usr/share/nginx/data nginx-http-share
+
+5. The web server is accessible on localhost port 80
 
 
 References
