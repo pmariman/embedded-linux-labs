@@ -57,27 +57,28 @@ Hints
 
 * Use the following structures as internal main context and node context:
 
-   .. code-block:: c
 
-      // main wheel control structure
-      struct timerwheel_ctx {
-              int fd;                         // timer file descriptor
-              int len;                        // length of the wheel
-              int tick_period;                // timer tick period in ms
-              int current_slot;               // current timer slot
-              struct list_node slots[];       // placeholder for variable array
-      };
+.. code-block:: c
 
-      // individual timer node structure
-      struct timerwheel_node {
-              int expire;                     // number of ticks
-              int mode;                       // singleshot, interval, auto-delete
-              int period;                     // node in ms
-              void *data;                     // user context to pass to callback
-              timer_cb callback;              // user callback to call at expiration
-              struct timerwheel_ctx *wheel;   // pointer to parent context
-              struct list_node el;
-      };
+  // main wheel control structure
+  struct timerwheel_ctx {
+          int fd;                         // timer file descriptor
+          int len;                        // length of the wheel
+          int tick_period;                // timer tick period in ms
+          int current_slot;               // current timer slot
+          struct list_node slots[];       // placeholder for variable array
+  };
+
+  // individual timer node structure
+  struct timerwheel_node {
+          int expire;                     // number of ticks
+          int mode;                       // singleshot, interval, auto-delete
+          int period;                     // node in ms
+          void *data;                     // user context to pass to callback
+          timer_cb callback;              // user callback to call at expiration
+          struct timerwheel_ctx *wheel;   // pointer to parent context
+          struct list_node el;
+  };
 
 
 Questions

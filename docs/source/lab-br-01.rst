@@ -33,10 +33,13 @@ Steps
    user@host: mv buildroot-2019.02.1/ ${BR_PATH}
    user@host: cd ${BR_PATH}
 
-3. Initialize the configuration with the default one provided:
+3. Initialize the configuration with the default one provided (where *xxx* stands for the platform):
 ::
 
    user@host: make xxx_defconfig
+
+.. important::
+   For example: ``raspberrypi3_defconfig``, ``beaglebone_defconfig``
 
 4. Enter the configuration menu:
 ::
@@ -92,31 +95,53 @@ Buildroot Output Directories
 Hints
 -----
 
+* Some supported ``make`` targets:
+
 ::
 
    # print help
-   make help
+   user@host: make help
 
-   #make
-   make list-defconfigs
+   # print existing board configurations
+   user@host: make list-defconfigs
 
    # load a default configuration file from configs/ directory
-   make <target_defconfig>
+   user@host: make <target_defconfig>
 
    # start the configuration menu
-   make menuconfig
+   user@host: make menuconfig
 
    # start the Linux kernel configuration menu
-   make linux-menuconfig
+   user@host: make linux-menuconfig
 
    # start the Busybox configuration menu
-   make busybox-menuconfig
+   user@host: make busybox-menuconfig
 
    # run the download stage to download all software sources
-   make source
+   user@host: make source
 
    # start a build
-   make
+   user@host: make
 
    # export the current configuration
-   make savedefconfig
+   user@host: make savedefconfig
+
+
+* Testing Buildroot results in ``qemu``:
+
+::
+
+   # run a kernel with the generated ext4 partition image
+   user@host: qemu-system-x86_64 -kernel qemu_client_br/output/images/bzImage -m 128 \
+              -hda qemu_client_br/output/images/rootfs.ext4 -append "root=/dev/sda"
+
+   # run a kernel with the generated ext4 partition image, with a serial console
+   user@host: qemu-system-x86_64 -kernel qemu_client_br/output/images/bzImage -m 128 \
+              -hda qemu_client_br/output/images/rootfs.ext4 \
+              -append "console=ttyS0,115200 root=/dev/sda1" --nographic
+
+   # run a kernel with the generated initramfs image, with a serial console
+   user@host: qemu-system-x86_64 -kernel qemu_client_br/output/imagesbzImage -m 128 \
+              -initrd qemu_client_br/output/imagesrootfs.cpio.gz \
+              -append "console=ttyS0,115200 root=/dev/sda1" -hda /dev/sdb --nographic
+

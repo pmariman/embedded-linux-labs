@@ -28,7 +28,7 @@ Steps
 2. Extract the Busybox sources:
 ::
 
-   user@host: tar -C xxx -xvf busybox-1.30.1.tar.bz2
+   user@host: tar -xvf busybox-1.30.1.tar.bz2
    user@host: cd busybox-1.30.1/
 
 3. Set the empty config and enter the configuration:
