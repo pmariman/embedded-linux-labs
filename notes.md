@@ -84,32 +84,59 @@
 
 ## TODO embedded linux
 
-* Lab on cross compiling busybox and creating a more complete cpio including modules and init etc
-* Lab on cross compiling toybox and creating a more complete cpio including modules and init and bash etc
-* U-Boot bootloader
-  -  mkimage -T script -C none -n 'boot script file' -d ${file_in} ${file_out}
-* Storage media overview and mtd vs mmc
-* Types of HW platforms (ref slides bootlin) + examples
-* Simple debootstrap
-* Buildroot customization
-    - References
-      - Main Buildroot documentation, chapter 9: https://buildroot.uclibc.org/downloads/manual/manual.html#customize
-    - Goals
-      - Use customization options of Buildroot
-    - Assignment
-      - Create a custom board directory
-      - Use an **overlay directory** to install a custom init script (BR2_ROOTFS_OVERLAY)
-      - Use an **post build script** to modify ... (adapt *interfaces* file) (BR2_ROOTFS_POST_BUILD_SCRIPT)
-      - Create a package in Buildroot and enable it in the custom config
-      - Store the custom configuration file to ``configs/``
+* Debian/Ubuntu on embedded systems:
+  - Concept
+  - Where to use / where not to use ?
+  - Package based
+  - Images / hw support
+  - debootstrap tool / other tools
+  - custom kernel build
+* Tiny cusomized systems:
+  - Lab on cross compiling busybox and creating a more complete cpio including modules and init etc
+  - Lab on cross compiling toybox and creating a more complete cpio including modules and init and bash etc
+  - C library
+* Bootloaders
+  - Concepts
+  - U-Boot
+  - mkimage -T script -C none -n 'boot script file' -d ${file_in} ${file_out}
+* Embedded Linux Systems
+  - Storage media overview and mtd vs mmc
+  - Types of HW platforms (ref slides bootlin) + examples
+* Buildroot customizations
+  - References
+    - Main Buildroot documentation, chapter 9: https://buildroot.uclibc.org/downloads/manual/manual.html#customize
+  - Goals
+    - Use customization options of Buildroot
+  - Assignment
+    - Create a custom board directory
+    - Use an **overlay directory** to install a custom init script (BR2_ROOTFS_OVERLAY)
+    - Use an **post build script** to modify ... (adapt *interfaces* file) (BR2_ROOTFS_POST_BUILD_SCRIPT)
+    - Create a package in Buildroot and enable it in the custom config
+    - Store the custom configuration file to ``configs/``
+* Simple embedded IO:
+  - Kernel vs userspace
+  - GPIO
+  - UART
+  - I2C
+  - SPI
+  - CAN
+* Programmning on embedded Linux:
+  - C
+  - C++
+  - Shell
+  - Other: Python, Golang, Rust, Java, ...
 
 
 # TODO lsp
-* http server and request reply protocol
+* Coding rules
+* POSIX
+* Logger daemon, incl sockets
+* http server and request reply protocol, incl json
 * Small init system, including SIGCHLD to SIGIGN
 
 
 # TODO iot
+* Simple sensor IO (I2C, SPI, GPIO, ...)
 * Small chat server and client using zmq, provide server in Python
 * Program design (event loop, MP, ...)
 * Small user space sensor driver over (I2C or SPI)
@@ -154,3 +181,54 @@
 -s (server mode)
 -c (client mode)
 ```
+
+
+# TODO networking
+* General networking recap:
+  - OSI, tcp/ip
+  - Tools/devices
+* Simple exercises:
+  - Tools:
+    - Wireshark
+    - tcpdump
+    - pcap
+    - nmap
+  - nginx/wget
+  - netcat
+  - ssh/scp (incl tunnel)
+  - telnet / ftp (unsecure)
+* Interface configuration:
+  - ifconfig, ip, dhclient
+  - brctl, arp, ethtool
+  - route, ping
+  - hostname, dig
+  - wifi (AP, bridge)
+* Applications:
+  - http, https
+  - webserver (nginx, lighttpd)
+  - Security (auth, ...)
+* Security:
+  - Awareness
+  - Firewalls
+  - HTTPS, TLS, SSL
+  - Hacking
+* Tools
+  - openssh/dropbear
+  - dnsmasq
+  - iptables
+  - nginx
+  - shorewall
+  - ebtables
+  - brctl
+* Lab: home Router
+  - Webserver
+  - SSH/SSL/certificated
+  - DHCP server
+  - DNS proxy/server
+  - Firewall
+  - Intrusion prevention (NAT)
+  - Load Balancer (?)
+  - Proxy Server (?)
+  - VPN (?)
+  - VLAN (?)
+
